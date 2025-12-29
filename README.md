@@ -26,7 +26,8 @@ A simple **HTML/CSS/JS** project to solve quadratic equations and display an int
 
 ## Live Demo
 
-You can view the project online via GitHub Pages (after deployment):
+You can view the project online via GitHub Pages:
+https://par3aheydari.github.io/quadratic-solver/
 
 ---
 
