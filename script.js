@@ -21,18 +21,14 @@ function solveQuadratic() {
       return;
     }
   
-    // محاسبه ریشه‌ها
     const discriminant = b*b - 4*a*c;
-    let roots = [];
     if(discriminant > 0){
       const x1 = (-b + Math.sqrt(discriminant)) / (2*a);
       const x2 = (-b - Math.sqrt(discriminant)) / (2*a);
-      roots = [x1,x2];
       realDiv.innerHTML = `Real: x₁=${x1.toFixed(2)}, x₂=${x2.toFixed(2)}`;
       complexDiv.innerHTML = "";
     } else if(discriminant === 0){
       const x = -b/(2*a);
-      roots = [x];
       realDiv.innerHTML = `Real: x=${x.toFixed(2)}`;
       complexDiv.innerHTML = "";
     } else {
@@ -51,39 +47,36 @@ function solveQuadratic() {
   
     const width = canvas.width;
     const height = canvas.height;
-    const scaleX = width/20; // x=-10..10
-    const scaleY = height/20; // y=-10..10
+    const scaleX = width/20;
+    const scaleY = height/20;
   
-    // بک‌گراند
-    const bg = ctx.createLinearGradient(0,0,0,height);
-    bg.addColorStop(0,'#0f0f0f');
-    bg.addColorStop(1,'#1a1a1a');
-    ctx.fillStyle = bg;
+    // بک‌گراند ساده داخل کادر
+    ctx.fillStyle = "#1a1a1a";
     ctx.fillRect(0,0,width,height);
   
     ctx.save();
     ctx.translate(width/2,height/2);
     ctx.scale(1,-1);
   
-    // Grid
-    ctx.lineWidth = 0.5;
-    ctx.strokeStyle = '#004400';
+    // Grid با رنگ gradient
     for(let i=-10;i<=10;i++){
-      // عمودی
+      ctx.lineWidth = 0.5;
+      ctx.strokeStyle = i===0 ? '#ff8800' : '#555555';
+      // خطوط عمودی
       ctx.beginPath();
       ctx.moveTo(i*scaleX,-height/2);
       ctx.lineTo(i*scaleX,height/2);
       ctx.stroke();
-      // افقی
+      // خطوط افقی
       ctx.beginPath();
       ctx.moveTo(-width/2,i*scaleY);
       ctx.lineTo(width/2,i*scaleY);
       ctx.stroke();
     }
   
-    // محور X و Y
+    // محور X و Y ضخیم
     ctx.lineWidth = 2;
-    ctx.strokeStyle = '#ff3300';
+    ctx.strokeStyle = '#ff8800';
     ctx.beginPath();
     ctx.moveTo(-width/2,0);
     ctx.lineTo(width/2,0);
@@ -93,9 +86,12 @@ function solveQuadratic() {
     ctx.lineTo(0,height/2);
     ctx.stroke();
   
-    // نمودار پارابولا
+    // نمودار پارابولا با گرادیان قرمز-نارنجی
+    const gradient = ctx.createLinearGradient(0,-height/2,0,height/2);
+    gradient.addColorStop(0,'#ff4444');
+    gradient.addColorStop(1,'#ff8800');
+    ctx.strokeStyle = gradient;
     ctx.lineWidth = 2;
-    ctx.strokeStyle = '#00ff99';
     ctx.beginPath();
     for(let x=-10; x<=10; x+=0.01){
       let y = a*x*x + b*x + c;

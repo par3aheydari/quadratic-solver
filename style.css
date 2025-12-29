@@ -1,7 +1,9 @@
 body {
     font-family: 'Roboto Mono', monospace;
-    background: linear-gradient(135deg, #0f0f0f, #1a1a1a);
-    color: #00ff99;
+    background: linear-gradient(270deg, #111111, #220000, #111111);
+    background-size: 600% 600%;
+    animation: gradientMove 20s ease infinite;
+    color: #ffffff;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -9,18 +11,24 @@ body {
     margin: 0;
   }
   
+  @keyframes gradientMove {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+  }
+  
   .container {
-    background: rgba(20,20,20,0.95);
+    background: rgba(30,30,30,0.9);
     padding: 30px;
     border-radius: 12px;
-    box-shadow: 0 0 25px #00ff99;
     text-align: center;
-    width: 550px;
+    width: 600px;
+    box-shadow: 0 0 20px rgba(255,136,0,0.5);
   }
   
   h1 {
     margin-bottom: 20px;
-    color: #00ff99;
+    color: #ff8800;
   }
   
   .equation {
@@ -29,30 +37,37 @@ body {
   }
   
   .equation input {
-    width: 50px;
+    width: 60px;
     padding: 5px;
     margin: 0 5px;
     border-radius: 5px;
-    border: 1px solid #00ff99;
-    background-color: #0d0d0d;
-    color: #00ff99;
+    border: 1px solid #ff8800;
+    background-color: #333333;
+    color: #ffffff;
     font-size: 18px;
     text-align: center;
+    -moz-appearance: textfield;
+  }
+  
+  .equation input::-webkit-inner-spin-button,
+  .equation input::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
   }
   
   button {
     padding: 10px 20px;
     border: none;
     border-radius: 8px;
-    background-color: #00ff99;
-    color: #0d0d0d;
+    background-color: #ff8800;
+    color: #1a1a1a;
     font-weight: bold;
     cursor: pointer;
     transition: 0.3s;
   }
   
   button:hover {
-    background-color: #00cc7a;
+    background-color: #cc7000;
   }
   
   .result {
@@ -60,5 +75,12 @@ body {
     font-size: 16px;
     display: flex;
     justify-content: space-around;
+  }
+  
+  #quadraticCanvas {
+    margin-top: 20px;
+    border: 2px solid #ff8800;
+    border-radius: 8px;
+    background-color: #1a1a1a;
   }
   
