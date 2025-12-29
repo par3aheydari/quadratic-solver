@@ -28,12 +28,8 @@ A simple **HTML/CSS/JS** project to solve quadratic equations and display an int
 
 You can view the project online via GitHub Pages (after deployment):
 
-
 ---
 
-## License
+# License
 
 This project is **open source**. Feel free to use and modify it!
-
-## Project Structure
-
