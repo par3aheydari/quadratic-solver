@@ -1,82 +1,64 @@
-@import url('https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@400;700&display=swap');
-
 body {
-  font-family: 'Roboto Mono', monospace;
-  background: linear-gradient(135deg, #0f0f0f, #1a1a1a, #0f0f0f);
-  color: #00ff99;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 100vh;
-  margin: 0;
-  overflow: hidden;
-}
-
-.container {
-  background: rgba(20,20,20,0.95);
-  padding: 40px;
-  border-radius: 12px;
-  box-shadow: 0 0 25px #00ff99;
-  text-align: center;
-  width: 500px;
-}
-
-h1 {
-  margin-bottom: 20px;
-  color: #00ff99;
-  text-shadow: 0 0 15px #00ff99;
-}
-
-.equation {
-  font-size: 20px;
-  margin-bottom: 20px;
-}
-
-.equation input {
-  width: 50px;
-  padding: 5px;
-  margin: 0 5px;
-  border-radius: 5px;
-  border: 1px solid #00ff99;
-  background-color: #0d0d0d;
-  color: #00ff99;
-  font-size: 18px;
-  text-align: center;
-}
-
-.equation input::placeholder {
-  color: #00ff99aa;
-}
-
-button {
-  padding: 12px 25px;
-  margin-top: 10px;
-  border: none;
-  border-radius: 8px;
-  background-color: #00ff99;
-  color: #0d0d0d;
-  font-weight: bold;
-  font-size: 16px;
-  cursor: pointer;
-  transition: 0.3s;
-}
-
-button:hover {
-  background-color: #00cc7a;
-}
-
-.result {
-  margin-top: 20px;
-  font-size: 18px;
-  font-weight: bold;
-  text-shadow: 0 0 8px #00ff99;
-  display: flex;
-  justify-content: space-around;
-}
-
-canvas {
-  margin-top: 20px;
-  background: linear-gradient(180deg, #111 0%, #1a1a1a 100%);
-  border-radius: 8px;
-  border: 2px solid #00ff99;
-}
+    font-family: 'Roboto Mono', monospace;
+    background: linear-gradient(135deg, #0f0f0f, #1a1a1a);
+    color: #00ff99;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+  }
+  
+  .container {
+    background: rgba(20,20,20,0.95);
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0 0 25px #00ff99;
+    text-align: center;
+    width: 550px;
+  }
+  
+  h1 {
+    margin-bottom: 20px;
+    color: #00ff99;
+  }
+  
+  .equation {
+    font-size: 20px;
+    margin-bottom: 20px;
+  }
+  
+  .equation input {
+    width: 50px;
+    padding: 5px;
+    margin: 0 5px;
+    border-radius: 5px;
+    border: 1px solid #00ff99;
+    background-color: #0d0d0d;
+    color: #00ff99;
+    font-size: 18px;
+    text-align: center;
+  }
+  
+  button {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 8px;
+    background-color: #00ff99;
+    color: #0d0d0d;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.3s;
+  }
+  
+  button:hover {
+    background-color: #00cc7a;
+  }
+  
+  .result {
+    margin-top: 15px;
+    font-size: 16px;
+    display: flex;
+    justify-content: space-around;
+  }
+  
