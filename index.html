@@ -5,15 +5,26 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Quadratic Equation Solver</title>
   <link rel="stylesheet" href="style.css">
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 </head>
 <body>
   <div class="container">
     <h1>Quadratic Solver</h1>
-    <input type="number" id="a" placeholder="a">
-    <input type="number" id="b" placeholder="b">
-    <input type="number" id="c" placeholder="c">
+
+    <div class="equation">
+      <input type="number" id="a" placeholder="a">x² +
+      <input type="number" id="b" placeholder="b">x +
+      <input type="number" id="c" placeholder="c"> = 0
+    </div>
+
     <button onclick="solveQuadratic()">Solve</button>
-    <div class="result" id="result"></div>
+
+    <div class="result">
+      <div id="realResult"></div>
+      <div id="complexResult"></div>
+    </div>
+
+    <canvas id="quadraticChart" width="400" height="300"></canvas>
   </div>
   
   <script src="script.js"></script>
